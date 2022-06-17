@@ -89,6 +89,23 @@ const Contact = () => {
       </div>
       <div className="row mt-5 ms-5">
         <Form onSubmit={onSubmitHandler}>
+        <Form.Group className="mb-3" controlId="Name">
+            <Row>
+              <Col md={2}>
+                <Form.Label>Your Name</Form.Label>
+              </Col>
+
+              <Col md={5}>
+                <Form.Control
+                  type="text"
+                  value={data.username}
+                  name="username"
+                  onChange={updateField}
+                  placeholder="Enter Name"
+                />
+              </Col>
+            </Row>
+          </Form.Group>
           <Form.Group className="mb-3" controlId="email">
             <Row>
               <Col md={2}>
@@ -102,23 +119,6 @@ const Contact = () => {
                   value={data.email}
                   name="email"
                   onChange={updateField}
-                />
-              </Col>
-            </Row>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="Name">
-            <Row>
-              <Col md={2}>
-                <Form.Label>Your Name</Form.Label>
-              </Col>
-
-              <Col md={5}>
-                <Form.Control
-                  type="text"
-                  value={data.username}
-                  name="username"
-                  onChange={updateField}
-                  placeholder="Enter Name"
                 />
               </Col>
             </Row>
