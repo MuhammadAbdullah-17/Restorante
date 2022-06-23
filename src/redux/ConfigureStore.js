@@ -1,10 +1,17 @@
-import { legacy_createStore as createStore} from 'redux';
-import { Reducer, initialState } from './Reducer';
+import { legacy_createStore as createStore, combineReducers } from "redux";
+import { Comments } from "./Comments";
+import { Dishes } from "./Dishes";
+import { Leaders } from "./Leaders";
+import { Promotions } from "./Promotions";
 
-export const configureStore=()=>{
-    const store = createStore(
-        Reducer,
-        initialState
-    )
-    return store;
-}
+export const configureStore = () => {
+  const store = createStore(
+    combineReducers({
+      dishes: Dishes,
+      comments: Comments,
+      leaders: Leaders,
+      promotions: Promotions,
+    })
+  );
+  return store;
+};

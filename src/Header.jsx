@@ -11,42 +11,51 @@ function ModalFunction() {
     name: "",
     pass: "",
   });
+  
   useEffect(() => {
     console.log("logged In");
   }, [loggedIn]);
+
   const handleClose = () => {
-    setloggedIn(true)
+    setloggedIn(true);
     setShow(false);
   };
+  
   const handleShow = () => {
     setShow(true);
   };
+  
   const onSubmitHandler = (event) => {
     event.preventDefault();
   };
+  
   const onChangeHandler = (e) => {
     setData({
       ...data,
       [e.target.name]: e.target.value,
     });
   };
-  const Clicked=()=>
-  {
-    return(
+  
+  const Clicked = () => {
+    return (
       <>
-      <p className="me-5 text-white fs-6 pt-3">Hey {data.name}!</p>
-        <Button style={{ backgroundColor: "#6213b0" }} onClick={()=>{setloggedIn(false)}}>
+        <p className="me-5 text-white fs-6 pt-3">Hey {data.name}!</p>
+        <Button
+          style={{ backgroundColor: "#6213b0" }}
+          onClick={() => {
+            setloggedIn(false);
+          }}
+        >
           LogOut
         </Button>
       </>
-    )
-  }
+    );
+  };
 
   return (
     <>
       {loggedIn ? (
-        <Clicked/>
-       
+        <Clicked />
       ) : (
         <Button style={{ backgroundColor: "#6213b0" }} onClick={handleShow}>
           Login
